@@ -1,3 +1,4 @@
-tensorflow==2.11.0
-keras==2.9.0
+tensorflow==2.11.0;python_version=="3.8.15"
+keras==2.9.0;python_version=="3.8.15"
+spacy==3.3.1;python_version=="3.8.15"
 streamlit==1.15.2
