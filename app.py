@@ -3,7 +3,7 @@
 
 # In[1]:
 
-pip install python==3.8.15
+#pip install python==3.8.15
 
 import streamlit as st
 from keras.models import load_model 
