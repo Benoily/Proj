@@ -1,13 +1,14 @@
-#!/usr/bin/env python3.8.15
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
 
-#pip install python==3.8.15
 
 import streamlit as st
-from keras.models import load_model 
-import spacy
+from tensorflow import keras
+import nltk
+#keras.models import load_model 
+#import spacy
 
 
 # chargement et  mise en cache du modèle
@@ -19,7 +20,7 @@ def load_the_model():
     
     global model
     #model = load_model(MODEL_FOLDER + 'bidirectional_lstm_with_return_sequences_on_embedded_heroku')
-    model = load_model('./model')
+    model = keras.models.load_model('./model')
 
     return model
 
@@ -29,9 +30,10 @@ my_model = load_the_model()
 # fonction qui renvoie la prédiction
 def predict(tweet):
     # prédiction
-    nlp = spacy.load("en_core_web_sm")
-    tokens = nlp(tweet)
-    tokens = [token.lemma_ for token in tokens if str(token) != ' ']
+    tokens = nltk.tokenize.word_tokenize(tweet, language='english')
+    #spacy.load("en_core_web_sm")
+    #tokens = nlp(tweet)
+    #tokens = [token.lemma_ for token in tokens if str(token) != ' ']
     prediction = my_model.predict(tokens)
 
     return prediction
@@ -53,4 +55,3 @@ if st.button("Prédire le sentiment"):
         st.success('Le sentiment du tweet est positif')
     else:
         st.warning('Le sentiment du tweet est négatif')
-
