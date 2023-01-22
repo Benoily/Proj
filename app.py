@@ -6,7 +6,7 @@
 #pip install python==3.8.15
 
 import streamlit as st
-from tensorflow.keras.models import load_model 
+from keras.models import load_model 
 import spacy
 
 
