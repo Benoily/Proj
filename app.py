@@ -7,6 +7,7 @@
 import streamlit as st
 from tensorflow import keras
 import nltk
+nltk.download('punkt')
 #keras.models import load_model 
 #import spacy
 
