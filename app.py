@@ -56,3 +56,4 @@ if st.button("Prédire le sentiment"):
         st.success('Le sentiment du tweet est positif')
     else:
         st.warning('Le sentiment du tweet est négatif')
+st.markdown("made by **FOLY BENOIT KUEVIAKOE**")
